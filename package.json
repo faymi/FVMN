@@ -1,0 +1,19 @@
+{
+  "name": "fvmn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faymi/FVMN.git"
+  },
+  "author": "lzh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faymi/FVMN/issues"
+  },
+  "homepage": "https://github.com/faymi/FVMN#readme"
+}
