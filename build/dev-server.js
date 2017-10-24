@@ -66,6 +66,16 @@ app.use(devMiddleware)
 const staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
+app.get('/getAdmin', function (req, res, next) {
+  let result = {
+    "name": "lzh",
+    "age": 20,
+    "gender": "male",
+    "shcool": "south university"
+  }
+  res.json(result)
+})
+
 const uri = 'http://localhost:' + port
 
 var _resolve
@@ -103,3 +113,4 @@ module.exports = {
     server.close()
   }
 }
+

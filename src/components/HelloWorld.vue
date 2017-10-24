@@ -16,6 +16,7 @@
       <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
+      <li v-on:click="greet">点击我</li>
     </ul>
   </div>
 </template>
@@ -26,6 +27,14 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    greet () {
+      this.axios.get('/getAdmin', {}).then(res => {
+        console.log(res.data)
+        alert('请看控制台信息！')
+      })
     }
   }
 }
