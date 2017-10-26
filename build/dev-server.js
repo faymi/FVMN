@@ -2,6 +2,7 @@
 require('./check-versions')()
 
 const config = require('../config')
+const requestHandle = require('../server/requestHandle')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
@@ -66,15 +67,7 @@ app.use(devMiddleware)
 const staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
-app.get('/getAdmin', function (req, res, next) {
-  let result = {
-    "name": "lzh",
-    "age": 20,
-    "gender": "male",
-    "shcool": "south university"
-  }
-  res.json(result)
-})
+app.get('/getAdmin', requestHandle.getAdmin)
 
 const uri = 'http://localhost:' + port
 
