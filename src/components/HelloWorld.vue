@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     greet () {
-      this.axios.get('/getAdmin', {}).then(res => {
+      this.axios.get('/apis/getAdmin', {}).then(res => {
         console.log(res.data)
         alert('请看控制台信息！')
       })
